@@ -17,22 +17,21 @@ createApp({
   },
   methods:{
      genereateEmail(){
-         axios
-         .get("https:flynn.boolean.careers/exercises/api/random/mail")
-         .then((resp) => {
-            console.log(resp);
-             for (let i = 0; i < 10; i++) {
-                const Element = resp.data.response
-                 this.newEmail.push({Element})
-
-                
-
-                
-             }
-
-         })
+        for (let i = 0; i < 10; i++) {
+            axios
+            .get("https:flynn.boolean.careers/exercises/api/random/mail")
+            .then((resp) => {
+               
+               const Element = resp.data.response
+             this.newEmail.push({Element})
+   
+            })  
+            
+        }
+       
     
-      }
+      },
+     
     
   }
 }).mount('#app')
